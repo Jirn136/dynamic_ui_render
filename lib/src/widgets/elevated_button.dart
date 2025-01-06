@@ -10,7 +10,6 @@ Widget buildButton(
     Map<String, ValueNotifier<String?>> notifiers,
     ActionHandler onAction,
     Map<String, String> Function() getFormData) {
-
   final hint = button.getAttribute('Hint') ?? 'Button';
   final action = button.getAttribute('Action');
   final backgroundColor =

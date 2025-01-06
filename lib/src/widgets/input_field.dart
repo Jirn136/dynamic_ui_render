@@ -11,7 +11,7 @@ Widget buildInput(
     bool? isRow,
     Map<String, TextEditingController> controllers,
     Map<String, ValueNotifier<String?>> notifiers) {
-
+  final id = input.getAttribute('Id') ?? '';
   final label = input.getAttribute('Label') ?? '';
   final hint = input.getAttribute('Hint') ?? '';
   final type = input.getAttribute('Type');
@@ -24,12 +24,12 @@ Widget buildInput(
 
   final controller = TextEditingController();
   if (type != 'select' && required) {
-    controllers[label] = controller;
+    controllers[id] = controller;
   }
 
   final ValueNotifier<String?> notifier = ValueNotifier(null);
   if (type == 'Select'.toLowerCase() && required) {
-    notifiers[label] = notifier;
+    notifiers[id] = notifier;
   }
 
   switch (type) {
